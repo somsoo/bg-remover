@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bg-remover.enjoy-onepage.com/sitemap.xml
