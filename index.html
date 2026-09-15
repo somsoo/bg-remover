@@ -250,6 +250,69 @@
     </div>
     <!-- LOGIC END -->
 
+<!-- 📌 상세 가이드 & FAQ 아코디언 (Google E-E-A-T 및 실사용자 가이드라인 100% 충족) -->
+<section class="max-w-4xl mx-auto my-12 px-4">
+  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm">
+    <div class="border-b border-slate-200 dark:border-slate-800 pb-5 mb-6">
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
+        <span>📖</span> 사진 배경 제거(누끼따기) 기술 원리 및 개인정보 보안 가이드
+      </h3>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">브라우저 Canvas 유클리드 색상 거리(Euclidean Distance) 마스킹 알고리즘 및 투명 PNG 처리 안내입니다.</p>
+    </div>
+
+    <!-- 공식 원리 & 핵심 기준 -->
+    <div class="mb-8">
+      <h4 class="text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-4 flex items-center gap-1.5">
+        <span>⚖️</span> 핵심 산출 기준 및 법정 원리
+      </h4>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+        
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>100% 로컬 캔버스 연산 원리
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">업로드한 사진은 외부 서버로 1바이트도 전송되지 않으며, 방문자의 기기 RAM 내 HTML5 Canvas 픽셀 조작만으로 배경을 분리합니다.</p>
+        </div>
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>알파 채널 페더링(안티앨리어싱)
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">경계면의 급격한 계단 현상(Aliasing)을 방지하기 위해 임계값 경계 25% 구간에 부드러운 알파 그라데이션을 적용합니다.</p>
+        </div>
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-blue-500"></span>Remove.bg 과금 대비 비용 절감
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">유료 API 크레딧(장당 200~500원) 결제 없이 쇼핑몰 상품 컷, 프로필 사진을 무제한 무료로 투명화 처리할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 자주 묻는 질문 (FAQ) -->
+    <div>
+      <h4 class="text-xs font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-1.5">
+        <span>❓</span> 자주 묻는 질문 (FAQ)
+      </h4>
+      <div class="space-y-3">
+        
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 사진이 서버에 저장되거나 외부로 유출될 위험이 있나요?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 전혀 없습니다. 네트워크 탭을 확인해보시면 이미지 업로드 API 호출이 0건이며, 브라우저 창을 닫으면 메모리에서 즉시 영구 삭제됩니다.</p>
+        </div>
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 피사체 경계가 덜 지워지거나 파이면 어떻게 조절하나요?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 배경과 피사체의 대비가 낮으면 '허용 오차(Tolerance)' 슬라이더를 20~30으로 낮추고, 배경에 잔상이 남으면 40~50으로 올려 최적점을 찾으세요.</p>
+        </div>
+        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 쇼핑몰 흰색 배경(쿠팡, 스마트스토어 규격)으로도 저장되나요?</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 네, 상단 배경 모드에서 '화이트(쇼핑몰)' 버튼을 선택하면 쿠팡/네이버 권장 순백색(#FFFFFF) JPG/PNG로 즉시 다운로드됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     <!-- E-E-A-T 서브페이지 네비게이션 링크 푸터 -->
     <footer class="bg-slate-950 border-t border-slate-800 px-6 py-6 text-center text-xs text-slate-500">
       <div class="max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-4 mb-3 font-medium">
@@ -509,15 +572,15 @@
         return;
       }
 
-      localStorage.setItem('bg_remover_pro_licensed', 'true');
-      localStorage.setItem('bg_remover_pro_key', input);
+      try { localStorage.setItem('bg_remover_pro_licensed', 'true'); } catch (e) { console.warn("Storage quota/security restriction:", e); }
+      try { localStorage.setItem('bg_remover_pro_key', input); } catch (e) { console.warn("Storage quota/security restriction:", e); }
       applyBgProStatus();
       closeBgProModal();
       showToastNotification('👑 PRO 라이선스가 성공적으로 활성화되었습니다! 모든 광고가 차단됩니다.');
     }
 
     function applyBgProStatus() {
-      const isPro = localStorage.getItem('bg_remover_pro_licensed') === 'true';
+      const isPro = (() => { try { return localStorage.getItem('bg_remover_pro_licensed'); } catch (e) { return null; } })() === 'true';
       if (isPro) {
         document.querySelectorAll('.manual-ad-box').forEach(el => el.style.display = 'none');
         document.getElementById('bgProBtnText').textContent = '👑 PRO 회원';
