@@ -2,6 +2,11 @@
 
 <html lang="ko">
 <head>
+    <!-- Performance Optimization: Resource Preconnect -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
 <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <title>무료 배경 제거기 | 서버 업로드 없는 100% 로컬 사진 누끼따기 (Local BG Cut)</title>
@@ -33,7 +38,18 @@
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
     .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #475569; }
     .bg-mode-active { border-color: #06b6d4; background-color: rgba(6, 182, 212, 0.15); color: #22d3ee; }
-  </style>
+  
+        /* U3 Accessibility: Global Keyboard Focus Ring Standard */
+        :focus-visible {
+            outline: 2px solid #3b82f6 !important;
+            outline-offset: 2px !important;
+        }
+        input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+            outline: 2px solid #2563eb !important;
+            outline-offset: 1px !important;
+        }
+    
+    </style>
 <style id="layout-shield">
   html, body {
     max-width: 100%;
@@ -155,7 +171,7 @@
 <div class="lg:col-span-6 space-y-6">
 <!-- 업로드 드롭존 -->
 <div class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-2xl p-8 text-center bg-slate-950/50 cursor-pointer transition" id="dropZone" onclick="document.getElementById('imgFileInput').click()">
-<input accept="image/*" class="hidden" id="imgFileInput" onchange="handleFileSelect(this.files)" type="file"/>
+<input accept="image/*" class="hidden" id="imgFileInput" onchange="handleFileSelect(this.files)" type="file" aria-label="Imgfileinput" />
 <div class="w-14 h-14 mx-auto rounded-2xl bg-cyan-950 text-cyan-400 flex items-center justify-center text-2xl mb-3 border border-cyan-800">
 <i class="fa-solid fa-cloud-arrow-up"></i>
 </div>
@@ -195,7 +211,7 @@
 <i class="fa-solid fa-eye-dropper block mb-1 text-amber-400"></i>
 <span>단색 지정</span>
 </button>
-<input class="hidden" id="customColorPicker" onchange="setCustomColor(this.value)" type="color" value="#0284c7"/>
+<input class="hidden" id="customColorPicker" onchange="setCustomColor(this.value)" type="color" value="#0284c7" aria-label="Customcolorpicker" />
 </div>
 <!-- 엣지 감도 및 허용 오차 슬라이더 -->
 <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
@@ -203,7 +219,7 @@
 <span class="text-slate-400 font-medium">배경 제거 감도 (Tolerance)</span>
 <span class="text-cyan-400 font-mono font-bold" id="toleranceVal">35</span>
 </div>
-<input class="w-full accent-cyan-500 cursor-pointer" id="toleranceSlider" max="90" min="5" oninput="updateTolerance(this.value)" type="range" value="35"/>
+<input class="w-full accent-cyan-500 cursor-pointer" id="toleranceSlider" max="90" min="5" oninput="updateTolerance(this.value)" type="range" value="35" aria-label="Toleranceslider" />
 <p class="text-[11px] text-slate-500">배경이 덜 지워지면 감도를 올리고, 피사체가 파이면 감도를 낮추세요.</p>
 </div>
 <!-- 실행 버튼 -->
@@ -400,7 +416,7 @@
 <p>✓ 최대 3대 기기(PC/맥/스마트폰) 영구 인증</p>
 </div>
 <div class="space-y-2">
-<input class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-xs font-mono text-center uppercase focus:ring-2 focus:ring-cyan-500 outline-none text-white" id="bgLicenseKeyInput" placeholder="라이선스 키 입력 (예: PRO-XXXX-XXXX)" type="text"/>
+<input class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-xs font-mono text-center uppercase focus:ring-2 focus:ring-cyan-500 outline-none text-white" id="bgLicenseKeyInput" placeholder="라이선스 키 입력 (예: PRO-XXXX-XXXX)" type="text" aria-label="라이선스 키 입력 (예: PRO-XXXX-XXXX)" />
 <button class="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold rounded-xl transition" id="btnVerifyBgLicense" onclick="verifyBgLicenseKey()" type="button">
           라이선스 키 인증하기
         </button>
