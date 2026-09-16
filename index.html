@@ -1,25 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>무료 배경 제거기 | 서버 업로드 없는 100% 로컬 사진 누끼따기 (Local BG Cut)</title>
-  <meta name="description" content="Remove.bg 크레딧 과금 없이 브라우저에서 100% 무료 무제한 투명 누끼따기. 인물, 상품, 프로필 사진 배경 제거 및 단색·그라데이션 교체 지원.">
-  <link rel="canonical" href="https://bg-remover.enjoy-onepage.com/">
-  
-  <meta property="og:title" content="무료 배경 제거기 - 100% 로컬 사진 누끼따기">
-  <meta property="og:description" content="서버 전송 0바이트! 브라우저 로컬에서 안전하고 빠르게 이미지 배경을 투명하게 제거하고 다운로드하세요.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bg-remover.enjoy-onepage.com/">
-  
-  <link rel="icon" href="favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Google AdSense 비동기 로더 (No-Duplicate-Push 헌법 준수) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106" crossorigin="anonymous"></script>
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>무료 배경 제거기 | 서버 업로드 없는 100% 로컬 사진 누끼따기 (Local BG Cut)</title>
+<meta content="Remove.bg 크레딧 과금 없이 브라우저에서 100% 무료 무제한 투명 누끼따기. 인물, 상품, 프로필 사진 배경 제거 및 단색·그라데이션 교체 지원." name="description"/>
+<link href="https://bg-remover.enjoy-onepage.com/" rel="canonical"/>
+<meta content="무료 배경 제거기 - 100% 로컬 사진 누끼따기" property="og:title"/>
+<meta content="서버 전송 0바이트! 브라우저 로컬에서 안전하고 빠르게 이미지 배경을 투명하게 제거하고 다운로드하세요." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://bg-remover.enjoy-onepage.com/" property="og:url"/>
+<link href="favicon.ico" rel="icon"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google AdSense 비동기 로더 (No-Duplicate-Push 헌법 준수) -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2228289204702106"></script>
+<style>
     /* 투명 체커보드 배경 패턴 */
     .checkerboard {
       background-image: linear-gradient(45deg, #1e293b 25%, transparent 25%), 
@@ -71,366 +68,314 @@
   }
 }
 </script>
-</head>
+<meta content="https://bg-remover.enjoy-onepage.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="무료 배경 제거기 - 100% 로컬 사진 누끼따기" name="twitter:title"/><meta content="서버 전송 0바이트! 브라우저 로컬에서 안전하고 빠르게 이미지 배경을 투명하게 제거하고 다운로드하세요." name="twitter:description"/><meta content="https://bg-remover.enjoy-onepage.com/og-image.png" name="twitter:image"/></head>
 <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col font-sans">
-
-  <!-- 상단 슬림 띠배너 (Top Slim Banner: 3824727725, 50~60px 고정) -->
-  <div class="manual-ad-box ad-top-banner w-full max-w-5xl mx-auto my-2 text-center overflow-hidden min-h-[50px] max-h-[60px]">
-    <ins class="adsbygoogle"
-         style="display:block; min-height:50px; max-height:60px;"
-         data-ad-client="ca-pub-2228289204702106"
-         data-ad-slot="3824727725"
-         data-ad-format="horizontal"
-         data-full-width-responsive="false"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- 메인 래퍼 (Double-Nesting 금지, 루트 단일 컨테이너 선언) -->
-  <main class="w-full max-w-5xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden mb-8 flex-1">
-    
-    <!-- 네비게이션 헤더 & 프라이버시 배지 -->
-    <header class="border-b border-slate-800 px-6 py-6 sm:px-10 flex flex-col md:flex-row items-center justify-between gap-4 bg-gradient-to-b from-slate-900 to-slate-950">
-      <div class="flex items-center gap-3.5 text-center md:text-left">
-        <div class="w-12 h-12 rounded-2xl bg-cyan-500 text-slate-950 flex items-center justify-center text-2xl shadow-lg shadow-cyan-500/20 shrink-0 font-black">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </div>
-        <div>
-          <div class="flex items-center gap-2 justify-center md:justify-start">
-            <h1 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Local BG Cut</h1>
-            <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">무제한 무료 · 0원</span>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Remove.bg 크레딧 걱정 끝, 100% 브라우저 메모리 배경 제거</p>
-        </div>
-      </div>
-
-      <!-- 상단 액션 버튼 그룹 (PRO 모달 & 배지) -->
-      <div class="flex items-center gap-2.5">
-        <div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800 text-cyan-400 text-xs font-bold">
-          <i class="fa-solid fa-shield-halved text-cyan-400"></i>
-          <span>100% Zero-Upload</span>
-        </div>
-        <button id="bgProBtn" onclick="openBgProModal()" class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5">
-          <i class="fa-solid fa-crown text-slate-950"></i>
-          <span id="bgProBtnText">PRO 라이선스</span>
-        </button>
-      </div>
-    </header>
-
-    <!-- 안심 배지 바 -->
-    <div class="bg-cyan-950/40 border-b border-cyan-900/50 px-6 py-2.5 text-xs text-cyan-200 flex items-center justify-between flex-wrap gap-2">
-      <div class="flex items-center gap-2">
-        <i class="fa-solid fa-bolt text-cyan-400"></i>
-        <span><strong>100% 로컬 연산:</strong> 고화질 원본 사진이 외부 서버로 전송되지 않으며, 기기 GPU/CPU에서 1초 만에 직접 누끼를 땁니다.</span>
-      </div>
-      <a href="privacy.html" class="underline hover:text-cyan-300 font-semibold text-[11px]">로컬 보증서 확인 →</a>
-    </div>
-
-    <!-- LOGIC START -->
-    <!-- PC 1:1 좌우 2단 대칭형 그리드 (lg:grid-cols-12 좌 6열 : 우 6열 sticky) -->
-    <div class="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      
-      <!-- 좌측 6열: 이미지 업로드 & 배경 분리 제어 패널 -->
-      <div class="lg:col-span-6 space-y-6">
-        
-        <!-- 업로드 드롭존 -->
-        <div id="dropZone" class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-2xl p-8 text-center bg-slate-950/50 cursor-pointer transition" onclick="document.getElementById('imgFileInput').click()">
-          <input type="file" id="imgFileInput" accept="image/*" class="hidden" onchange="handleFileSelect(this.files)"/>
-          <div class="w-14 h-14 mx-auto rounded-2xl bg-cyan-950 text-cyan-400 flex items-center justify-center text-2xl mb-3 border border-cyan-800">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-          </div>
-          <p class="text-sm font-bold text-slate-200">배경을 지울 사진을 여기에 끌어다 놓으세요</p>
-          <p class="text-xs text-slate-500 mt-1">인물 프로필, 상품 사진, 반려동물, 로고 (JPG, PNG, WEBP)</p>
-          <div class="mt-4 flex items-center justify-center gap-2 text-[11px] text-cyan-400">
-            <i class="fa-solid fa-scissors"></i>
-            <span>원클릭 투명 PNG 변환</span>
-          </div>
-        </div>
-
-        <!-- 편집 옵션 제어창 (이미지 로드 시 표시) -->
-        <div id="editorControls" class="space-y-4 hidden">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2">
-            <span class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
-              <i class="fa-solid fa-palette text-cyan-400"></i>
+<!-- 상단 슬림 띠배너 (Top Slim Banner: 3824727725, 50~60px 고정) -->
+<div class="manual-ad-box ad-top-banner w-full max-w-5xl mx-auto my-2 text-center overflow-hidden min-h-[50px] max-h-[60px]">
+<ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="horizontal" data-ad-slot="3824727725" data-full-width-responsive="false" style="display:block; min-height:50px; max-height:60px;"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- 메인 래퍼 (Double-Nesting 금지, 루트 단일 컨테이너 선언) -->
+<main class="w-full max-w-5xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl overflow-hidden mb-8 flex-1">
+<!-- 네비게이션 헤더 & 프라이버시 배지 -->
+<header class="border-b border-slate-800 px-6 py-6 sm:px-10 flex flex-col md:flex-row items-center justify-between gap-4 bg-gradient-to-b from-slate-900 to-slate-950">
+<div class="flex items-center gap-3.5 text-center md:text-left">
+<div class="w-12 h-12 rounded-2xl bg-cyan-500 text-slate-950 flex items-center justify-center text-2xl shadow-lg shadow-cyan-500/20 shrink-0 font-black">
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+</div>
+<div>
+<div class="flex items-center gap-2 justify-center md:justify-start">
+<h1 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight">Local BG Cut</h1>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">무제한 무료 · 0원</span>
+</div>
+<p class="text-xs sm:text-sm text-slate-400 mt-0.5">Remove.bg 크레딧 걱정 끝, 100% 브라우저 메모리 배경 제거</p>
+</div>
+</div>
+<!-- 상단 액션 버튼 그룹 (PRO 모달 & 배지) -->
+<div class="flex items-center gap-2.5">
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-800 text-cyan-400 text-xs font-bold">
+<i class="fa-solid fa-shield-halved text-cyan-400"></i>
+<span>100% Zero-Upload</span>
+</div>
+<button class="px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 text-xs font-bold rounded-xl shadow-sm transition flex items-center gap-1.5" id="bgProBtn" onclick="openBgProModal()">
+<i class="fa-solid fa-crown text-slate-950"></i>
+<span id="bgProBtnText">PRO 라이선스</span>
+</button>
+</div>
+</header>
+<!-- 안심 배지 바 -->
+<div class="bg-cyan-950/40 border-b border-cyan-900/50 px-6 py-2.5 text-xs text-cyan-200 flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-2">
+<i class="fa-solid fa-bolt text-cyan-400"></i>
+<span><strong>100% 로컬 연산:</strong> 고화질 원본 사진이 외부 서버로 전송되지 않으며, 기기 GPU/CPU에서 1초 만에 직접 누끼를 땁니다.</span>
+</div>
+<a class="underline hover:text-cyan-300 font-semibold text-[11px]" href="privacy.html">로컬 보증서 확인 →</a>
+</div>
+<!-- LOGIC START -->
+<!-- PC 1:1 좌우 2단 대칭형 그리드 (lg:grid-cols-12 좌 6열 : 우 6열 sticky) -->
+<div class="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- 좌측 6열: 이미지 업로드 & 배경 분리 제어 패널 -->
+<div class="lg:col-span-6 space-y-6">
+<!-- 업로드 드롭존 -->
+<div class="border-2 border-dashed border-slate-700 hover:border-cyan-500 rounded-2xl p-8 text-center bg-slate-950/50 cursor-pointer transition" id="dropZone" onclick="document.getElementById('imgFileInput').click()">
+<input accept="image/*" class="hidden" id="imgFileInput" onchange="handleFileSelect(this.files)" type="file"/>
+<div class="w-14 h-14 mx-auto rounded-2xl bg-cyan-950 text-cyan-400 flex items-center justify-center text-2xl mb-3 border border-cyan-800">
+<i class="fa-solid fa-cloud-arrow-up"></i>
+</div>
+<p class="text-sm font-bold text-slate-200">배경을 지울 사진을 여기에 끌어다 놓으세요</p>
+<p class="text-xs text-slate-500 mt-1">인물 프로필, 상품 사진, 반려동물, 로고 (JPG, PNG, WEBP)</p>
+<div class="mt-4 flex items-center justify-center gap-2 text-[11px] text-cyan-400">
+<i class="fa-solid fa-scissors"></i>
+<span>원클릭 투명 PNG 변환</span>
+</div>
+</div>
+<!-- 편집 옵션 제어창 (이미지 로드 시 표시) -->
+<div class="space-y-4 hidden" id="editorControls">
+<div class="flex items-center justify-between border-b border-slate-800 pb-2">
+<span class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+<i class="fa-solid fa-palette text-cyan-400"></i>
               배경 교체 및 합성 모드
             </span>
-            <button type="button" onclick="document.getElementById('imgFileInput').click()" class="text-xs text-cyan-400 hover:underline">
+<button class="text-xs text-cyan-400 hover:underline" onclick="document.getElementById('imgFileInput').click()" type="button">
               다른 사진 변경
             </button>
-          </div>
-
-          <!-- 배경 교체 모드 버튼 그룹 -->
-          <div class="grid grid-cols-4 gap-2 text-xs font-bold">
-            <button type="button" id="mode-transparent" onclick="setBackgroundMode('transparent')" class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl bg-mode-active text-center transition">
-              <i class="fa-solid fa-border-none block mb-1"></i>
-              <span>투명 누끼</span>
-            </button>
-            <button type="button" id="mode-white" onclick="setBackgroundMode('white')" class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition">
-              <i class="fa-solid fa-square block mb-1 text-white"></i>
-              <span>화이트 (쇼핑몰)</span>
-            </button>
-            <button type="button" id="mode-gradient" onclick="setBackgroundMode('gradient')" class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition">
-              <i class="fa-solid fa-circle-half-stroke block mb-1 text-cyan-400"></i>
-              <span>감성 그라디언트</span>
-            </button>
-            <button type="button" id="mode-custom" onclick="document.getElementById('customColorPicker').click()" class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition">
-              <i class="fa-solid fa-eye-dropper block mb-1 text-amber-400"></i>
-              <span>단색 지정</span>
-            </button>
-            <input type="color" id="customColorPicker" value="#0284c7" class="hidden" onchange="setCustomColor(this.value)"/>
-          </div>
-
-          <!-- 엣지 감도 및 허용 오차 슬라이더 -->
-          <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
-            <div class="flex justify-between text-xs">
-              <span class="text-slate-400 font-medium">배경 제거 감도 (Tolerance)</span>
-              <span id="toleranceVal" class="text-cyan-400 font-mono font-bold">35</span>
-            </div>
-            <input type="range" id="toleranceSlider" min="5" max="90" value="35" class="w-full accent-cyan-500 cursor-pointer" oninput="updateTolerance(this.value)"/>
-            <p class="text-[11px] text-slate-500">배경이 덜 지워지면 감도를 올리고, 피사체가 파이면 감도를 낮추세요.</p>
-          </div>
-
-          <!-- 실행 버튼 -->
-          <button type="button" id="btnExecuteCut" onclick="processBackgroundRemoval()" class="w-full py-3.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl shadow-lg shadow-cyan-950/40 transition active:scale-[0.99] flex items-center justify-center gap-2">
-            <i class="fa-solid fa-scissors"></i>
-            <span>배경 제거 다시 적용</span>
-          </button>
-        </div>
-
-      </div>
-
-      <!-- 우측 6열: 캔버스 프리뷰 및 실시간 다운로드 영수증 카드 (lg:sticky) -->
-      <div class="lg:col-span-6 lg:sticky lg:top-8 space-y-6">
-        
-        <!-- 실시간 명세 영수증 카드 -->
-        <div class="bg-slate-950 text-slate-100 rounded-3xl p-6 sm:p-7 shadow-2xl border border-slate-800">
-          
-          <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-            <div class="flex items-center gap-2">
-              <div class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></div>
-              <h2 class="font-bold text-sm text-slate-200 tracking-wide uppercase">
-                <span id="bgStatusTitle">이미지 대기 중</span>
-              </h2>
-            </div>
-            <div class="text-right font-mono text-xs text-slate-400">
-              <span id="bgProcessTime">0.0s</span>
-            </div>
-          </div>
-
-          <!-- 인터랙티브 캔버스 프리뷰 영역 (체커보드 배경) -->
-          <div class="my-5 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[220px] max-h-[360px] checkerboard relative">
-            <canvas id="previewCanvas" class="max-w-full max-h-[340px] object-contain"></canvas>
-            <div id="previewPlaceholder" class="text-xs text-slate-500 text-center p-6">
-              <i class="fa-regular fa-image text-3xl mb-2 opacity-50 block"></i>
+</div>
+<!-- 배경 교체 모드 버튼 그룹 -->
+<div class="grid grid-cols-4 gap-2 text-xs font-bold">
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl bg-mode-active text-center transition" id="mode-transparent" onclick="setBackgroundMode('transparent')" type="button">
+<i class="fa-solid fa-border-none block mb-1"></i>
+<span>투명 누끼</span>
+</button>
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition" id="mode-white" onclick="setBackgroundMode('white')" type="button">
+<i class="fa-solid fa-square block mb-1 text-white"></i>
+<span>화이트 (쇼핑몰)</span>
+</button>
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition" id="mode-gradient" onclick="setBackgroundMode('gradient')" type="button">
+<i class="fa-solid fa-circle-half-stroke block mb-1 text-cyan-400"></i>
+<span>감성 그라디언트</span>
+</button>
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition" id="mode-custom" onclick="document.getElementById('customColorPicker').click()" type="button">
+<i class="fa-solid fa-eye-dropper block mb-1 text-amber-400"></i>
+<span>단색 지정</span>
+</button>
+<input class="hidden" id="customColorPicker" onchange="setCustomColor(this.value)" type="color" value="#0284c7"/>
+</div>
+<!-- 엣지 감도 및 허용 오차 슬라이더 -->
+<div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-slate-400 font-medium">배경 제거 감도 (Tolerance)</span>
+<span class="text-cyan-400 font-mono font-bold" id="toleranceVal">35</span>
+</div>
+<input class="w-full accent-cyan-500 cursor-pointer" id="toleranceSlider" max="90" min="5" oninput="updateTolerance(this.value)" type="range" value="35"/>
+<p class="text-[11px] text-slate-500">배경이 덜 지워지면 감도를 올리고, 피사체가 파이면 감도를 낮추세요.</p>
+</div>
+<!-- 실행 버튼 -->
+<button class="w-full py-3.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl shadow-lg shadow-cyan-950/40 transition active:scale-[0.99] flex items-center justify-center gap-2" id="btnExecuteCut" onclick="processBackgroundRemoval()" type="button">
+<i class="fa-solid fa-scissors"></i>
+<span>배경 제거 다시 적용</span>
+</button>
+</div>
+</div>
+<!-- 우측 6열: 캔버스 프리뷰 및 실시간 다운로드 영수증 카드 (lg:sticky) -->
+<div class="lg:col-span-6 lg:sticky lg:top-8 space-y-6">
+<!-- 실시간 명세 영수증 카드 -->
+<div class="bg-slate-950 text-slate-100 rounded-3xl p-6 sm:p-7 shadow-2xl border border-slate-800">
+<div class="flex items-center justify-between border-b border-slate-800 pb-4">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></div>
+<h2 class="font-bold text-sm text-slate-200 tracking-wide uppercase">
+<span id="bgStatusTitle">이미지 대기 중</span>
+</h2>
+</div>
+<div class="text-right font-mono text-xs text-slate-400">
+<span id="bgProcessTime">0.0s</span>
+</div>
+</div>
+<!-- 인터랙티브 캔버스 프리뷰 영역 (체커보드 배경) -->
+<div class="my-5 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[220px] max-h-[360px] checkerboard relative">
+<canvas class="max-w-full max-h-[340px] object-contain" id="previewCanvas"></canvas>
+<div class="text-xs text-slate-500 text-center p-6" id="previewPlaceholder">
+<i class="fa-regular fa-image text-3xl mb-2 opacity-50 block"></i>
               사진을 올리면 투명 누끼 결과가 실시간 렌더링됩니다
             </div>
-          </div>
-
-          <!-- 동적 작업 명세 영수증 -->
-          <div class="py-2 space-y-3 font-mono text-xs border-t border-slate-800/80">
-            <div class="flex justify-between text-slate-400">
-              <span>OUTPUT MODE:</span>
-              <span class="text-cyan-400 font-bold" id="bgReceiptMode">투명 PNG</span>
-            </div>
-            <div class="flex justify-between text-slate-400">
-              <span>RESOLUTION:</span>
-              <span class="text-white font-bold" id="bgReceiptResolution">0 x 0 px</span>
-            </div>
-            <div class="flex justify-between text-slate-400">
-              <span>ESTIMATED SAVINGS:</span>
-              <span class="text-emerald-400 font-bold">약 300원 (Remove.bg 대비)</span>
-            </div>
-          </div>
-
-          <!-- 원클릭 결과 다운로드 버튼 그룹 -->
-          <div class="pt-5 border-t border-slate-800 space-y-2.5">
-            <a id="btnDownloadPng" href="#" download="cutout.png" class="w-full py-4 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black rounded-2xl text-center shadow-lg shadow-cyan-950/40 transition flex items-center justify-center gap-2 opacity-50 pointer-events-none">
-              <i class="fa-solid fa-download"></i>
-              <span id="btnDownloadText">투명 PNG 다운로드 (무료)</span>
-            </a>
-
-            <!-- 전사 공통 원클릭 결과 복사 & 바이럴 링크 -->
-            <button type="button" id="btnCopyResult" onclick="copyCutResult()" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs transition flex items-center justify-center gap-2">
-              <i class="fa-solid fa-copy text-cyan-400"></i>
-              <span>작업 결과 및 바로가기 클립보드 복사</span>
-            </button>
-          </div>
-
-          <!-- 보안 확인 문구 -->
-          <div class="mt-4 text-center text-[10px] text-slate-500 font-mono">
+</div>
+<!-- 동적 작업 명세 영수증 -->
+<div class="py-2 space-y-3 font-mono text-xs border-t border-slate-800/80">
+<div class="flex justify-between text-slate-400">
+<span>OUTPUT MODE:</span>
+<span class="text-cyan-400 font-bold" id="bgReceiptMode">투명 PNG</span>
+</div>
+<div class="flex justify-between text-slate-400">
+<span>RESOLUTION:</span>
+<span class="text-white font-bold" id="bgReceiptResolution">0 x 0 px</span>
+</div>
+<div class="flex justify-between text-slate-400">
+<span>ESTIMATED SAVINGS:</span>
+<span class="text-emerald-400 font-bold">약 300원 (Remove.bg 대비)</span>
+</div>
+</div>
+<!-- 원클릭 결과 다운로드 버튼 그룹 -->
+<div class="pt-5 border-t border-slate-800 space-y-2.5">
+<a class="w-full py-4 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-black rounded-2xl text-center shadow-lg shadow-cyan-950/40 transition flex items-center justify-center gap-2 opacity-50 pointer-events-none" download="cutout.png" href="#" id="btnDownloadPng">
+<i class="fa-solid fa-download"></i>
+<span id="btnDownloadText">투명 PNG 다운로드 (무료)</span>
+</a>
+<!-- 전사 공통 원클릭 결과 복사 & 바이럴 링크 -->
+<button class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs transition flex items-center justify-center gap-2" id="btnCopyResult" onclick="copyCutResult()" type="button">
+<i class="fa-solid fa-copy text-cyan-400"></i>
+<span>작업 결과 및 바로가기 클립보드 복사</span>
+</button>
+</div>
+<!-- 보안 확인 문구 -->
+<div class="mt-4 text-center text-[10px] text-slate-500 font-mono">
             100% IN-BROWSER COLOR CLUSTERING · ZERO EXTERNAL API CALLS
           </div>
-
-        </div>
-
-      </div>
-
-    </div>
-    <!-- LOGIC END -->
-
+</div>
+</div>
+</div>
+<!-- LOGIC END -->
 <!-- 📌 상세 가이드 & FAQ 아코디언 (Google E-E-A-T 및 실사용자 가이드라인 100% 충족) -->
 <section class="max-w-4xl mx-auto my-12 px-4">
-  <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm">
-    <div class="border-b border-slate-200 dark:border-slate-800 pb-5 mb-6">
-      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
-        <span>📖</span> 사진 배경 제거(누끼따기) 기술 원리 및 개인정보 보안 가이드
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm">
+<div class="border-b border-slate-200 dark:border-slate-800 pb-5 mb-6">
+<h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5">
+<span>📖</span> 사진 배경 제거(누끼따기) 기술 원리 및 개인정보 보안 가이드
       </h3>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">브라우저 Canvas 유클리드 색상 거리(Euclidean Distance) 마스킹 알고리즘 및 투명 PNG 처리 안내입니다.</p>
-    </div>
-
-    <!-- 공식 원리 & 핵심 기준 -->
-    <div class="mb-8">
-      <h4 class="text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-4 flex items-center gap-1.5">
-        <span>⚖️</span> 핵심 산출 기준 및 법정 원리
+<p class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">브라우저 Canvas 유클리드 색상 거리(Euclidean Distance) 마스킹 알고리즘 및 투명 PNG 처리 안내입니다.</p>
+</div>
+<!-- 공식 원리 & 핵심 기준 -->
+<div class="mb-8">
+<h4 class="text-xs font-black uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-4 flex items-center gap-1.5">
+<span>⚖️</span> 핵심 산출 기준 및 법정 원리
       </h4>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-        
-        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
-          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-blue-500"></span>100% 로컬 캔버스 연산 원리
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+<div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+<h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>100% 로컬 캔버스 연산 원리
           </h4>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">업로드한 사진은 외부 서버로 1바이트도 전송되지 않으며, 방문자의 기기 RAM 내 HTML5 Canvas 픽셀 조작만으로 배경을 분리합니다.</p>
-        </div>
-        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
-          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-blue-500"></span>알파 채널 페더링(안티앨리어싱)
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">업로드한 사진은 외부 서버로 1바이트도 전송되지 않으며, 방문자의 기기 RAM 내 HTML5 Canvas 픽셀 조작만으로 배경을 분리합니다.</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+<h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>알파 채널 페더링(안티앨리어싱)
           </h4>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">경계면의 급격한 계단 현상(Aliasing)을 방지하기 위해 임계값 경계 25% 구간에 부드러운 알파 그라데이션을 적용합니다.</p>
-        </div>
-        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
-          <h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-blue-500"></span>Remove.bg 과금 대비 비용 절감
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">경계면의 급격한 계단 현상(Aliasing)을 방지하기 위해 임계값 경계 25% 구간에 부드러운 알파 그라데이션을 적용합니다.</p>
+</div>
+<div class="p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/80">
+<h4 class="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>Remove.bg 과금 대비 비용 절감
           </h4>
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">유료 API 크레딧(장당 200~500원) 결제 없이 쇼핑몰 상품 컷, 프로필 사진을 무제한 무료로 투명화 처리할 수 있습니다.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 자주 묻는 질문 (FAQ) -->
-    <div>
-      <h4 class="text-xs font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-1.5">
-        <span>❓</span> 자주 묻는 질문 (FAQ)
+<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">유료 API 크레딧(장당 200~500원) 결제 없이 쇼핑몰 상품 컷, 프로필 사진을 무제한 무료로 투명화 처리할 수 있습니다.</p>
+</div>
+</div>
+</div>
+<!-- 자주 묻는 질문 (FAQ) -->
+<div>
+<h4 class="text-xs font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-1.5">
+<span>❓</span> 자주 묻는 질문 (FAQ)
       </h4>
-      <div class="space-y-3">
-        
-        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
-          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 사진이 서버에 저장되거나 외부로 유출될 위험이 있나요?</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 전혀 없습니다. 네트워크 탭을 확인해보시면 이미지 업로드 API 호출이 0건이며, 브라우저 창을 닫으면 메모리에서 즉시 영구 삭제됩니다.</p>
-        </div>
-        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
-          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 피사체 경계가 덜 지워지거나 파이면 어떻게 조절하나요?</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 배경과 피사체의 대비가 낮으면 '허용 오차(Tolerance)' 슬라이더를 20~30으로 낮추고, 배경에 잔상이 남으면 40~50으로 올려 최적점을 찾으세요.</p>
-        </div>
-        <div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
-          <h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 쇼핑몰 흰색 배경(쿠팡, 스마트스토어 규격)으로도 저장되나요?</h4>
-          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 네, 상단 배경 모드에서 '화이트(쇼핑몰)' 버튼을 선택하면 쿠팡/네이버 권장 순백색(#FFFFFF) JPG/PNG로 즉시 다운로드됩니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="space-y-3">
+<div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+<h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 사진이 서버에 저장되거나 외부로 유출될 위험이 있나요?</h4>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 전혀 없습니다. 네트워크 탭을 확인해보시면 이미지 업로드 API 호출이 0건이며, 브라우저 창을 닫으면 메모리에서 즉시 영구 삭제됩니다.</p>
+</div>
+<div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+<h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 피사체 경계가 덜 지워지거나 파이면 어떻게 조절하나요?</h4>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 배경과 피사체의 대비가 낮으면 '허용 오차(Tolerance)' 슬라이더를 20~30으로 낮추고, 배경에 잔상이 남으면 40~50으로 올려 최적점을 찾으세요.</p>
+</div>
+<div class="border border-slate-200 dark:border-slate-700 rounded-xl p-4 bg-white dark:bg-slate-800">
+<h4 class="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-1">Q. 쇼핑몰 흰색 배경(쿠팡, 스마트스토어 규격)으로도 저장되나요?</h4>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">A. 네, 상단 배경 모드에서 '화이트(쇼핑몰)' 버튼을 선택하면 쿠팡/네이버 권장 순백색(#FFFFFF) JPG/PNG로 즉시 다운로드됩니다.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- 🔗 연관 유틸리티 도구 추천 카드 (사용자 체류시간 증가 & SEO 내부 링크) -->
 <section class="max-w-4xl mx-auto my-8 px-4">
-  <div class="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-    <h3 class="text-base font-black text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-      <span>💡</span> 함께 많이 활용하는 필수 계산기 & 도구
+<div class="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+<h3 class="text-base font-black text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+<span>💡</span> 함께 많이 활용하는 필수 계산기 &amp; 도구
     </h3>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-      
-      <a href="https://convert-hub.enjoy-onepage.com/" class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:shadow-md transition flex items-center justify-between group">
-        <div>
-          <div class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">추천 유틸리티</div>
-          <div class="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition">무제한 이미지 포맷 변환기</div>
-        </div>
-        <span class="text-slate-400 group-hover:translate-x-1 transition font-bold">→</span>
-      </a>
-      <a href="https://doc-scanner.enjoy-onepage.com/" class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:shadow-md transition flex items-center justify-between group">
-        <div>
-          <div class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">추천 유틸리티</div>
-          <div class="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition">모바일 웹 문서 스캐너</div>
-        </div>
-        <span class="text-slate-400 group-hover:translate-x-1 transition font-bold">→</span>
-      </a>
-      <a href="https://pdf-toolbox.enjoy-onepage.com/" class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:shadow-md transition flex items-center justify-between group">
-        <div>
-          <div class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">추천 유틸리티</div>
-          <div class="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition">PDF 병합·분할 툴박스</div>
-        </div>
-        <span class="text-slate-400 group-hover:translate-x-1 transition font-bold">→</span>
-      </a>
-    </div>
-  </div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+<a class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:shadow-md transition flex items-center justify-between group" href="https://convert-hub.enjoy-onepage.com/">
+<div>
+<div class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">추천 유틸리티</div>
+<div class="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition">무제한 이미지 포맷 변환기</div>
+</div>
+<span class="text-slate-400 group-hover:translate-x-1 transition font-bold">→</span>
+</a>
+<a class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:shadow-md transition flex items-center justify-between group" href="https://doc-scanner.enjoy-onepage.com/">
+<div>
+<div class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">추천 유틸리티</div>
+<div class="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition">모바일 웹 문서 스캐너</div>
+</div>
+<span class="text-slate-400 group-hover:translate-x-1 transition font-bold">→</span>
+</a>
+<a class="p-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:shadow-md transition flex items-center justify-between group" href="https://pdf-toolbox.enjoy-onepage.com/">
+<div>
+<div class="text-xs text-blue-600 dark:text-blue-400 font-bold mb-1">추천 유틸리티</div>
+<div class="text-sm font-black text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition">PDF 병합·분할 툴박스</div>
+</div>
+<span class="text-slate-400 group-hover:translate-x-1 transition font-bold">→</span>
+</a>
+</div>
+</div>
 </section>
-
-
-
-    <!-- E-E-A-T 서브페이지 네비게이션 링크 푸터 -->
-    <footer class="bg-slate-950 border-t border-slate-800 px-6 py-6 text-center text-xs text-slate-500">
-      <div class="max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-4 mb-3 font-medium">
-        <a href="about.html" class="hover:text-cyan-400 transition">서비스 소개 & 기술 원리</a>
-        <span class="text-slate-700">·</span>
-        <a href="privacy.html" class="hover:text-cyan-400 transition">개인정보처리방침 (로컬 보증서)</a>
-        <span class="text-slate-700">·</span>
-        <a href="terms.html" class="hover:text-cyan-400 transition">이용약관</a>
-        <span class="text-slate-700">·</span>
-        <a href="sitemap.xml" class="hover:text-cyan-400 transition">사이트맵</a>
-      </div>
-      <p>© 2026 Local BG Cut. All rights reserved. Zero-Upload Client-Side Architecture.</p>
-    </footer>
-
-  </main>
-
-  <!-- 하단 대형 배너 (푸터 직전: 3416334507, 1:1 푸시 규격) -->
-  <div class="manual-ad-box ad-bottom-banner w-full max-w-5xl mx-auto mb-8 text-center overflow-hidden">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-2228289204702106"
-         data-ad-slot="3416334507"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-
-  <!-- Lemon Squeezy PRO 라이선스 등록 모달 -->
-  <div id="bgProModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-slate-900 w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-800 text-center space-y-5 text-slate-100">
-      <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl border border-amber-500/30">
-        <i class="fa-solid fa-crown"></i>
-      </div>
-      <div>
-        <h3 class="text-xl font-black text-white">PRO 평생 무광고 라이선스</h3>
-        <p class="text-xs text-slate-400 mt-1">한 번 결제로 모든 광고 영구 제거 및 클린 워크스페이스</p>
-      </div>
-
-      <div class="bg-slate-950/60 border border-slate-800 p-4 rounded-2xl text-left text-xs space-y-1.5 text-slate-300 font-medium">
-        <p>✓ 구글 광고 영구 전면 차단</p>
-        <p>✓ 1회 결제 ($2.99 / 약 3,900원, 정기구독 아님)</p>
-        <p>✓ 최대 3대 기기(PC/맥/스마트폰) 영구 인증</p>
-      </div>
-
-      <div class="space-y-2">
-        <input type="text" id="bgLicenseKeyInput" placeholder="라이선스 키 입력 (예: PRO-XXXX-XXXX)" class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-xs font-mono text-center uppercase focus:ring-2 focus:ring-cyan-500 outline-none text-white"/>
-        <button type="button" id="btnVerifyBgLicense" onclick="verifyBgLicenseKey()" class="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold rounded-xl transition">
+<!-- E-E-A-T 서브페이지 네비게이션 링크 푸터 -->
+<footer class="bg-slate-950 border-t border-slate-800 px-6 py-6 text-center text-xs text-slate-500">
+<div class="max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-4 mb-3 font-medium">
+<a class="hover:text-cyan-400 transition" href="about.html">서비스 소개 &amp; 기술 원리</a>
+<span class="text-slate-700">·</span>
+<a class="hover:text-cyan-400 transition" href="privacy.html">개인정보처리방침 (로컬 보증서)</a>
+<span class="text-slate-700">·</span>
+<a class="hover:text-cyan-400 transition" href="terms.html">이용약관</a>
+<span class="text-slate-700">·</span>
+<a class="hover:text-cyan-400 transition" href="sitemap.xml">사이트맵</a>
+</div>
+<p>© 2026 Local BG Cut. All rights reserved. Zero-Upload Client-Side Architecture.</p>
+</footer>
+</main>
+<!-- 하단 대형 배너 (푸터 직전: 3416334507, 1:1 푸시 규격) -->
+<div class="manual-ad-box ad-bottom-banner w-full max-w-5xl mx-auto mb-8 text-center overflow-hidden">
+<ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- Lemon Squeezy PRO 라이선스 등록 모달 -->
+<div class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="bgProModal">
+<div class="bg-slate-900 w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-800 text-center space-y-5 text-slate-100">
+<div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl border border-amber-500/30">
+<i class="fa-solid fa-crown"></i>
+</div>
+<div>
+<h3 class="text-xl font-black text-white">PRO 평생 무광고 라이선스</h3>
+<p class="text-xs text-slate-400 mt-1">한 번 결제로 모든 광고 영구 제거 및 클린 워크스페이스</p>
+</div>
+<div class="bg-slate-950/60 border border-slate-800 p-4 rounded-2xl text-left text-xs space-y-1.5 text-slate-300 font-medium">
+<p>✓ 구글 광고 영구 전면 차단</p>
+<p>✓ 1회 결제 ($2.99 / 약 3,900원, 정기구독 아님)</p>
+<p>✓ 최대 3대 기기(PC/맥/스마트폰) 영구 인증</p>
+</div>
+<div class="space-y-2">
+<input class="w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-xs font-mono text-center uppercase focus:ring-2 focus:ring-cyan-500 outline-none text-white" id="bgLicenseKeyInput" placeholder="라이선스 키 입력 (예: PRO-XXXX-XXXX)" type="text"/>
+<button class="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold rounded-xl transition" id="btnVerifyBgLicense" onclick="verifyBgLicenseKey()" type="button">
           라이선스 키 인증하기
         </button>
-      </div>
-
-      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2 text-xs">
-        <a href="https://lemonsqueezy.com" target="_blank" class="text-cyan-400 font-bold hover:underline">
+</div>
+<div class="pt-3 border-t border-slate-800 flex flex-col gap-2 text-xs">
+<a class="text-cyan-400 font-bold hover:underline" href="https://lemonsqueezy.com" target="_blank">
           👉 아직 키가 없으신가요? 평생 이용권 구매하기 ($2.99)
         </a>
-        <button type="button" onclick="closeBgProModal()" class="text-slate-400 hover:text-slate-200">닫기</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 전사 공통 원클릭 결과 복사 토스트 알림 컴포넌트 -->
-  <div id="global-ux-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:#083344;color:#67e8f9;border:1px solid #0e7490;padding:12px 24px;border-radius:9999px;font-size:14px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.4);z-index:9999;transition:all 0.3s ease;opacity:0;pointer-events:none;">
+<button class="text-slate-400 hover:text-slate-200" onclick="closeBgProModal()" type="button">닫기</button>
+</div>
+</div>
+</div>
+<!-- 전사 공통 원클릭 결과 복사 토스트 알림 컴포넌트 -->
+<div id="global-ux-toast" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(10px);background:#083344;color:#67e8f9;border:1px solid #0e7490;padding:12px 24px;border-radius:9999px;font-size:14px;font-weight:600;box-shadow:0 10px 25px rgba(0,0,0,0.4);z-index:9999;transition:all 0.3s ease;opacity:0;pointer-events:none;">
     알림 메시지
   </div>
-
-  <!-- 핵심 클라이언트 사이드 배경 제거 & 마스킹 스크립트 -->
-  <script>
+<!-- 핵심 클라이언트 사이드 배경 제거 & 마스킹 스크립트 -->
+<script>
     let rawImage = null;
     let bgMode = 'transparent'; // transparent | white | gradient | custom
     let customColor = '#0284c7';
