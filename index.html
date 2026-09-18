@@ -122,6 +122,15 @@
 }
   </script>
 <meta content="https://bg-remover.enjoy-onepage.com/og-image.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="무료 배경 제거기 - 100% 로컬 사진 누끼따기" name="twitter:title"/><meta content="서버 전송 0바이트! 브라우저 로컬에서 안전하고 빠르게 이미지 배경을 투명하게 제거하고 다운로드하세요." name="twitter:description"/><meta content="https://bg-remover.enjoy-onepage.com/og-image.png" name="twitter:image"/><style id="mobile-hardening-shield">
+  /* 모바일 한글 단어 단위 줄바꿈 보존 & 버튼 텍스트 단일행 쉴드 */
+  body, h1, h2, h3, h4, p, span, label {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  button, [role="button"], a.btn {
+    white-space: nowrap;
+    word-break: keep-all;
+  }
   @media (max-width: 640px) {
     input, select, textarea {
       font-size: 16px !important;
