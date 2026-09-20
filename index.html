@@ -205,25 +205,25 @@
 <i class="fa-solid fa-palette text-cyan-400"></i>
               배경 교체 및 합성 모드
             </span>
-<button class="text-xs text-cyan-400 hover:underline" onclick="document.getElementById('imgFileInput').click()" type="button">
+<button class="text-xs text-cyan-400 hover:underline whitespace-nowrap" onclick="document.getElementById('imgFileInput').click()" type="button">
               다른 사진 변경
             </button>
 </div>
 <!-- 배경 교체 모드 버튼 그룹 -->
 <div class="grid grid-cols-4 gap-2 text-xs font-bold">
-<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl bg-mode-active text-center transition" id="mode-transparent" onclick="setBackgroundMode('transparent')" type="button">
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl bg-mode-active text-center transition whitespace-nowrap" id="mode-transparent" onclick="setBackgroundMode('transparent')" type="button">
 <i class="fa-solid fa-border-none block mb-1"></i>
 <span>투명 누끼</span>
 </button>
-<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition" id="mode-white" onclick="setBackgroundMode('white')" type="button">
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition whitespace-nowrap" id="mode-white" onclick="setBackgroundMode('white')" type="button">
 <i class="fa-solid fa-square block mb-1 text-white"></i>
 <span>화이트 (쇼핑몰)</span>
 </button>
-<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition" id="mode-gradient" onclick="setBackgroundMode('gradient')" type="button">
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition whitespace-nowrap" id="mode-gradient" onclick="setBackgroundMode('gradient')" type="button">
 <i class="fa-solid fa-circle-half-stroke block mb-1 text-cyan-400"></i>
 <span>감성 그라디언트</span>
 </button>
-<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition" id="mode-custom" onclick="document.getElementById('customColorPicker').click()" type="button">
+<button class="bg-mode-btn py-2.5 px-2 border border-slate-700 rounded-xl text-center text-slate-400 hover:bg-slate-800 transition whitespace-nowrap" id="mode-custom" onclick="document.getElementById('customColorPicker').click()" type="button">
 <i class="fa-solid fa-eye-dropper block mb-1 text-amber-400"></i>
 <span>단색 지정</span>
 </button>
@@ -239,7 +239,7 @@
 <p class="text-[11px] text-slate-500">배경이 덜 지워지면 감도를 올리고, 피사체가 파이면 감도를 낮추세요.</p>
 </div>
 <!-- 실행 버튼 -->
-<button class="w-full py-3.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl shadow-lg shadow-cyan-950/40 transition active:scale-[0.99] flex items-center justify-center gap-2" id="btnExecuteCut" onclick="processBackgroundRemoval()" type="button">
+<button class="w-full py-3.5 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black rounded-2xl shadow-lg shadow-cyan-950/40 transition active:scale-[0.99] flex items-center justify-center gap-2 whitespace-nowrap" id="btnExecuteCut" onclick="processBackgroundRemoval()" type="button">
 <i class="fa-solid fa-scissors"></i>
 <span>배경 제거 다시 적용</span>
 </button>
@@ -290,7 +290,7 @@
 <span id="btnDownloadText">투명 PNG 다운로드 (무료)</span>
 </a>
 <!-- 전사 공통 원클릭 결과 복사 & 바이럴 링크 -->
-<button class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs transition flex items-center justify-center gap-2" id="btnCopyResult" onclick="copyCutResult()" type="button">
+<button class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold rounded-xl text-xs transition flex items-center justify-center gap-2 whitespace-nowrap" id="btnCopyResult" onclick="copyCutResult()" type="button">
 <i class="fa-solid fa-copy text-cyan-400"></i>
 <span>작업 결과 및 바로가기 클립보드 복사</span>
 </button>
@@ -478,7 +478,53 @@
 </div>
 <p>© 2026 Local BG Cut. All rights reserved. Zero-Upload Client-Side Architecture.</p>
 </footer>
-</main>
+
+    <!-- 심층 가이드북 바로가기 (4-1-4 헌법 준수) -->
+    <div class="mt-8 mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full mb-2">2026 실무 가이드</span>
+        <h3 class="text-lg font-bold text-gray-900">공식 기준과 상세 산식이 궁금하신가요?</h3>
+        <p class="text-xs text-gray-600 mt-1">Local BG Cut의 최신 법정 고시, 감면 혜택, 실무 체크리스트를 확인해보세요.</p>
+      </div>
+      <a href="/guides/guide.html" class="whitespace-nowrap px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md transition flex items-center gap-2 text-xs shrink-0">
+        심층 가이드북 읽기 &rarr;
+      </a>
+    </div>
+
+  
+    <!-- E-E-A-T FAQ Section (16-5 헌법 준수) -->
+    <section class="mt-8 mb-8 space-y-3">
+      <h2 class="text-xl font-bold text-gray-900 mb-4">자주 묻는 질문 (FAQ)</h2>
+      <details class="bg-gray-50 p-4 rounded-xl border border-gray-200 group">
+        <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+          <span>입력한 데이터가 외부 서버에 저장되나요?</span>
+          <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+        </summary>
+        <p class="mt-3 text-gray-600 text-xs leading-relaxed">
+          아닙니다. 100% 사용자의 기기 브라우저 메모리 내에서만 연산되며, 어떠한 금융/개인 데이터도 외부로 전송되지 않습니다.
+        </p>
+      </details>
+      <details class="bg-gray-50 p-4 rounded-xl border border-gray-200 group">
+        <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+          <span>2026년 최신 공식 기준이 반영되어 있나요?</span>
+          <summary class="text-blue-600 group-open:rotate-180 transition transform"></summary>
+        </summary>
+        <p class="mt-3 text-gray-600 text-xs leading-relaxed">
+          네, 최신 고시된 법령 및 공공 기준 요율을 상수로 반영하여 정확한 산출 결과를 제공합니다.
+        </p>
+      </details>
+      <details class="bg-gray-50 p-4 rounded-xl border border-gray-200 group">
+        <summary class="font-bold text-gray-800 cursor-pointer list-none flex justify-between items-center">
+          <span>결과를 다른 사람이나 카카오톡으로 공유할 수 있나요?</span>
+          <span class="text-blue-600 group-open:rotate-180 transition transform">▼</span>
+        </summary>
+        <p class="mt-3 text-gray-600 text-xs leading-relaxed">
+          '결과 복사하기' 버튼을 누르면 정돈된 요약 텍스트와 바로가기 주소가 클립보드에 자동 복사됩니다.
+        </p>
+      </details>
+    </section>
+
+  </main>
 <!-- 하단 대형 배너 (푸터 직전: 3416334507, 1:1 푸시 규격) -->
 <div class="manual-ad-box ad-bottom-banner w-full max-w-5xl mx-auto mb-8 text-center overflow-hidden">
 <ins class="adsbygoogle" data-ad-client="ca-pub-2228289204702106" data-ad-format="auto" data-ad-slot="3416334507" data-full-width-responsive="true" style="display:block"></ins>
