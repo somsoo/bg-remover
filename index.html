@@ -109,7 +109,7 @@
         <span>✒️</span> 서명·도장·단색 배경 투명화 & PNG 추출기
       </a>
       <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">
-        100% Local Canvas
+        브라우저에서 처리
       </span>
     </div>
   </header>
@@ -124,10 +124,10 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       <!-- Left Column: Controls (5 cols) -->
       <section class="lg:col-span-5 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm space-y-5">
-        <div class="border-2 border-dashed border-gray-200 hover:border-indigo-400 rounded-2xl p-6 text-center cursor-pointer transition bg-gray-50" onclick="document.getElementById('fileInput').click()">
+        <div id="dropZone" class="border-2 border-dashed border-gray-200 hover:border-indigo-400 rounded-2xl p-6 text-center cursor-pointer transition bg-gray-50" onclick="document.getElementById('fileInput').click()">
           <span class="text-3xl block mb-2">📁</span>
           <div class="text-sm font-bold text-gray-700">이미지 파일 선택 또는 드래그</div>
-          <div class="text-xs text-gray-400 mt-1">PNG, JPG, WEBP (Zero Server Leak)</div>
+          <div class="text-xs text-gray-400 mt-1">PNG, JPG, WEBP (서버로 보내지 않음)</div>
           <input type="file" id="fileInput" accept="image/*" class="hidden">
         </div>
 
@@ -147,12 +147,13 @@
               <span id="toleranceVal" class="text-indigo-600 font-mono">35%</span>
             </div>
             <input type="range" id="toleranceRange" min="5" max="95" value="35" class="w-full accent-indigo-600">
+            <p id="toleranceNote" class="hidden text-xs text-gray-500 mt-1">서명 / 도장 모드는 밝기 기준으로 종이를 지우므로 허용 오차를 쓰지 않습니다.</p>
           </div>
 
           <div>
             <div class="flex justify-between text-xs font-bold text-gray-700 mb-1">
               <span>테두리 부드럽게 (스무딩):</span>
-              <span id="smoothVal" class="text-indigo-600 font-mono">1px</span>
+              <span id="smoothVal" class="text-indigo-600 font-mono">1단계</span>
             </div>
             <input type="range" id="smoothRange" min="0" max="5" value="1" class="w-full accent-indigo-600">
           </div>
@@ -166,19 +167,19 @@
       <!-- Right Column: Interactive Canvas & Preview (7 cols) -->
       <section class="lg:col-span-7 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm space-y-4 lg:sticky lg:top-8">
         <div class="flex justify-between items-center text-xs font-bold text-gray-500">
-          <span>LIVE TRANSPARENCY PREVIEW</span>
-          <span id="targetColorBadge" class="hidden px-2 py-0.5 rounded bg-gray-100 text-gray-700 border">Target Color</span>
+          <span>투명화 미리보기</span>
+          <span id="targetColorBadge" class="hidden px-2 py-0.5 rounded bg-gray-100 text-gray-700 border">선택한 색</span>
         </div>
 
         <div class="checkered-bg border border-gray-300 rounded-xl overflow-hidden flex items-center justify-center min-h-[350px] relative">
           <canvas id="mainCanvas" class="max-w-full max-h-[500px] object-contain cursor-crosshair"></canvas>
-          <div id="noImgMsg" class="text-xs text-gray-400 font-medium">Upload an image to start preview</div>
+          <div id="noImgMsg" class="text-xs text-gray-400 font-medium">이미지를 올리면 미리보기가 나타납니다</div>
         </div>
 
         <!-- Copy & Share Banner -->
         <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
           <button id="copyUrlBtn" onclick="copyToolUrl()" class="whitespace-nowrap px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-lg text-xs transition">
-            🔗 결과 복사하기
+            🔗 도구 주소 복사
           </button>
           
         </div>
@@ -261,15 +262,18 @@
   <script>
     const fileInput = document.getElementById('fileInput');
     const canvas = document.getElementById('mainCanvas');
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
     const noImgMsg = document.getElementById('noImgMsg');
     const controlsArea = document.getElementById('controlsArea');
     const toleranceRange = document.getElementById('toleranceRange');
     const toleranceVal = document.getElementById('toleranceVal');
+    const toleranceNote = document.getElementById('toleranceNote');
     const smoothRange = document.getElementById('smoothRange');
     const smoothVal = document.getElementById('smoothVal');
     const modeSelect = document.getElementById('modeSelect');
     const downloadBtn = document.getElementById('downloadBtn');
+    const dropZone = document.getElementById('dropZone');
+    const targetColorBadge = document.getElementById('targetColorBadge');
 
     let originalImage = null;
     let targetR = 255, targetG = 255, targetB = 255;
@@ -282,25 +286,47 @@
       setTimeout(() => t.classList.add('opacity-0', 'pointer-events-none'), 2200);
     }
 
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
+    // 파일 불러오기 (파일 선택과 끌어다 놓기 공통)
+    function loadFile(file) {
       if (!file) return;
-      fileName = file.name.replace(/\.[^/.]+$/, "") + "_transparent";
       const reader = new FileReader();
       reader.onload = (event) => {
         const img = new Image();
         img.onload = () => {
           originalImage = img;
+          fileName = file.name.replace(/\.[^/.]+$/, "") + "_transparent";
           canvas.width = img.width;
           canvas.height = img.height;
           noImgMsg.classList.add('hidden');
           controlsArea.classList.remove('opacity-50', 'pointer-events-none');
           processTransparency();
-          showToast("Image loaded! Transparency applied.");
+          showToast('이미지를 불러와 배경을 투명하게 만들었습니다.');
         };
+        img.onerror = () => showToast('이 브라우저에서 열 수 없는 파일입니다. PNG·JPG·WEBP 이미지를 올려 주세요.');
         img.src = event.target.result;
       };
+      reader.onerror = () => showToast('파일을 읽지 못했습니다. 다시 시도해 주세요.');
       reader.readAsDataURL(file);
+    }
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      fileInput.value = '';
+      loadFile(file);
+    });
+
+    // 끌어다 놓기: 쪽 어디에 놓아도 브라우저가 파일을 여는 대신 불러옴
+    window.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.style.borderColor = '#818cf8';
+    });
+    window.addEventListener('dragleave', (e) => {
+      if (!e.relatedTarget) dropZone.style.borderColor = '';
+    });
+    window.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.style.borderColor = '';
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) loadFile(e.dataTransfer.files[0]);
     });
 
     toleranceRange.addEventListener('input', () => {
@@ -309,24 +335,33 @@
     });
 
     smoothRange.addEventListener('input', () => {
-      smoothVal.innerText = smoothRange.value + 'px';
+      smoothVal.innerText = smoothRange.value + '단계';
       processTransparency();
     });
+
+    // 서명 모드는 밝기 기준으로 지우므로 허용 오차를 끔, 스포이드 모드에서만 고른 색 표시
+    function syncModeUi() {
+      const sig = modeSelect.value === 'signature';
+      toleranceRange.disabled = sig;
+      toleranceRange.style.opacity = sig ? '0.4' : '';
+      toleranceNote.classList.toggle('hidden', !sig);
+      targetColorBadge.classList.toggle('hidden', modeSelect.value !== 'eyedropper');
+    }
 
     modeSelect.addEventListener('change', () => {
+      syncModeUi();
       processTransparency();
     });
 
-    // Eyedropper click
+    // 스포이드: 누른 자리의 원본 색을 지울 색으로
     canvas.addEventListener('click', (e) => {
       if (!originalImage || modeSelect.value !== 'eyedropper') return;
       const rect = canvas.getBoundingClientRect();
       const scaleX = canvas.width / rect.width;
       const scaleY = canvas.height / rect.height;
-      const x = Math.floor((e.clientX - rect.left) * scaleX);
-      const y = Math.floor((e.clientY - rect.top) * scaleY);
+      const x = Math.min(canvas.width - 1, Math.max(0, Math.floor((e.clientX - rect.left) * scaleX)));
+      const y = Math.min(canvas.height - 1, Math.max(0, Math.floor((e.clientY - rect.top) * scaleY)));
 
-      // Sample original image pixel
       const tempCanvas = document.createElement('canvas');
       tempCanvas.width = canvas.width;
       tempCanvas.height = canvas.height;
@@ -337,10 +372,15 @@
       targetG = pixel[1];
       targetB = pixel[2];
 
-      showToast(`Selected Color: RGB(${targetR}, ${targetG}, ${targetB})`);
+      targetColorBadge.textContent = `선택한 색 RGB(${targetR}, ${targetG}, ${targetB})`;
+      targetColorBadge.style.borderColor = `rgb(${targetR}, ${targetG}, ${targetB})`;
+      showToast(`선택한 색: RGB(${targetR}, ${targetG}, ${targetB})`);
       processTransparency();
     });
 
+    // 투명화. '테두리 부드럽게' 단계만큼 지우는 경계에 부드러운 구간을 둠:
+    // 흰색·스포이드 모드는 허용 오차 바로 바깥의 색 거리 (단계 x 20) 구간, 서명 모드는 밝기 180 바로 아래 (단계 x 12) 구간에서
+    // 투명도가 차츰 바뀜 (남기는 픽셀이 원래보다 불투명해지지는 않음)
     function processTransparency() {
       if (!originalImage) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -349,7 +389,13 @@
       const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = imgData.data;
       const tol = (parseFloat(toleranceRange.value) / 100) * 441.67; // max color distance
+      const level = parseInt(smoothRange.value, 10) || 0;
+      const band = level * 20;
+      const lumBand = level * 12;
       const mode = modeSelect.value;
+      const tr = mode === 'eyedropper' ? targetR : 255;
+      const tg = mode === 'eyedropper' ? targetG : 255;
+      const tb = mode === 'eyedropper' ? targetB : 255;
 
       for (let i = 0; i < data.length; i += 4) {
         const r = data[i];
@@ -357,28 +403,26 @@
         const b = data[i+2];
 
         if (mode === 'signature') {
-          // High contrast signature/stamp: preserve dark or saturated red strokes, clear white/light gray
+          // 밝은 종이(밝기 180 초과)는 투명하게, 나머지 선은 대비를 높여 남김
           const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
           if (luminance > 180) {
-            data[i+3] = 0; // Transparent paper
+            data[i+3] = 0;
           } else {
-            // Enhance contrast
             const factor = 1.3;
             data[i] = Math.max(0, Math.min(255, (r - 128) * factor + 128));
             data[i+1] = Math.max(0, Math.min(255, (g - 128) * factor + 128));
             data[i+2] = Math.max(0, Math.min(255, (b - 128) * factor + 128));
+            if (lumBand > 0 && luminance > 180 - lumBand) {
+              data[i+3] = Math.min(data[i+3], Math.round((180 - luminance) / lumBand * 255));
+            }
           }
-        } else if (mode === 'white') {
-          // Remove white/near-white
-          const dist = Math.sqrt((r - 255)**2 + (g - 255)**2 + (b - 255)**2);
+        } else {
+          // 흰색(흰색 모드) 또는 고른 색(스포이드 모드)과의 색 거리
+          const dist = Math.sqrt((r - tr)**2 + (g - tg)**2 + (b - tb)**2);
           if (dist <= tol) {
             data[i+3] = 0;
-          }
-        } else if (mode === 'eyedropper') {
-          // Color distance to target RGB
-          const dist = Math.sqrt((r - targetR)**2 + (g - targetG)**2 + (b - targetB)**2);
-          if (dist <= tol) {
-            data[i+3] = 0;
+          } else if (band > 0 && dist < tol + band) {
+            data[i+3] = Math.min(data[i+3], Math.round((dist - tol) / band * 255));
           }
         }
       }
@@ -389,6 +433,10 @@
     downloadBtn.addEventListener('click', () => {
       if (!originalImage) return;
       canvas.toBlob((blob) => {
+        if (!blob) {
+          showToast('이미지가 너무 커서 PNG로 저장하지 못했습니다.');
+          return;
+        }
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -397,16 +445,24 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(() => URL.revokeObjectURL(url), 5000);
-        showToast("✓ Transparent PNG downloaded!");
+        showToast('✓ 투명 PNG를 저장했습니다.');
       }, 'image/png');
     });
 
+    // 이 도구의 주소를 복사 (결과 이미지는 'PNG 다운로드'로 저장)
     function copyToolUrl() {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(window.location.href);
-        showToast("URL copied to clipboard!");
+      if (!navigator.clipboard) {
+        showToast('이 브라우저에서는 자동 복사를 할 수 없습니다. 주소창의 주소를 직접 복사하세요.');
+        return;
       }
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast('도구 주소를 복사했습니다.');
+      }).catch(() => {
+        showToast('복사하지 못했습니다. 주소창의 주소를 직접 복사하세요.');
+      });
     }
+
+    syncModeUi();
   </script>
 </body>
 </html>
