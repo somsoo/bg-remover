@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>서명·도장·단색 배경 1초 투명화 &amp; PNG 추출기 | 배경 제거</title>
+    <title>서명·도장·단색 배경 투명화 &amp; PNG 추출기 | 배경 제거</title>
     <link>https://bg-remover.enjoy-onepage.com/</link>
-    <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진을 1초 만에 투명 PNG로 변환합니다. 서버 전송 없는 100% 안전한 로컬 캔버스 도구.</description>
+    <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진의 배경을 투명하게 만들어 PNG로 저장합니다. 이미지는 서버로 보내지 않고 브라우저에서 처리합니다.</description>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 01 Oct 2026 03:32:10 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 04:25:16 +0900</lastBuildDate>
     <atom:link href="https://bg-remover.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>서명·도장·단색 배경 1초 투명화 &amp; PNG 추출기 | 배경 제거</title>
+      <title>서명·도장·단색 배경 투명화 &amp; PNG 추출기 | 배경 제거</title>
       <link>https://bg-remover.enjoy-onepage.com/</link>
       <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/</guid>
-      <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진을 1초 만에 투명 PNG로 변환합니다. 서버 전송 없는 100% 안전한 로컬 캔버스 도구.</description>
+      <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진의 배경을 투명하게 만들어 PNG로 저장합니다. 이미지는 서버로 보내지 않고 브라우저에서 처리합니다.</description>
       <pubDate>Thu, 01 Oct 2026 03:32:10 +0900</pubDate>
     </item>
     <item>
