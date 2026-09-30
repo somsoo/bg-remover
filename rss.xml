@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>서명·도장·단색 배경 1초 투명화 &amp; PNG 추출기 | 2026 Online Utility</title>
-  <link>https://bg-remover.enjoy-onepage.com/</link>
-  <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진을 1초 만에 투명 PNG로 변환합니다. 서버 전송 없는 100% 안전한 로컬 캔버스 도구.</description>
-  <language>ko-kr</language>
-  <atom:link href="https://bg-remover.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Tue, 29 Sep 2026 06:00:57 +0000</lastBuildDate>
-  <item>
-    <title>이용약관 | 배경 제거기</title>
-    <link>https://bg-remover.enjoy-onepage.com/terms.html</link>
-    <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/terms.html</guid>
-    <description>이용약관 | 배경 제거기</description>
-    <pubDate>Mon, 14 Sep 2026 11:57:09 +0900</pubDate>
-  </item>
-  <item>
-    <title>서비스 소개 &amp; 기술 아키텍처 | 배경 제거기</title>
-    <link>https://bg-remover.enjoy-onepage.com/about.html</link>
-    <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/about.html</guid>
-    <description>서비스 소개 &amp; 기술 아키텍처 | 배경 제거기</description>
-    <pubDate>Mon, 14 Sep 2026 11:57:09 +0900</pubDate>
-  </item>
-  <item>
-    <title>개인정보처리방침 &amp; 100% 로컬 연산 보증서 | 배경 제거기</title>
-    <link>https://bg-remover.enjoy-onepage.com/privacy.html</link>
-    <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/privacy.html</guid>
-    <description>개인정보처리방침 &amp; 100% 로컬 연산 보증서 | 배경 제거기</description>
-    <pubDate>Mon, 14 Sep 2026 11:57:09 +0900</pubDate>
-  </item>
-</channel>
+  <channel>
+    <title>서명·도장·단색 배경 1초 투명화 &amp; PNG 추출기 | 배경 제거</title>
+    <link>https://bg-remover.enjoy-onepage.com/</link>
+    <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진을 1초 만에 투명 PNG로 변환합니다. 서버 전송 없는 100% 안전한 로컬 캔버스 도구.</description>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 01 Oct 2026 03:32:10 +0900</lastBuildDate>
+    <atom:link href="https://bg-remover.enjoy-onepage.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>서명·도장·단색 배경 1초 투명화 &amp; PNG 추출기 | 배경 제거</title>
+      <link>https://bg-remover.enjoy-onepage.com/</link>
+      <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/</guid>
+      <description>전자계약 서명, 도장, 로고, 흰색 배경 상품 사진을 1초 만에 투명 PNG로 변환합니다. 서버 전송 없는 100% 안전한 로컬 캔버스 도구.</description>
+      <pubDate>Thu, 01 Oct 2026 03:32:10 +0900</pubDate>
+    </item>
+    <item>
+      <title>개인정보처리방침 &amp; 100% 로컬 연산 보증서 | 배경 제거기</title>
+      <link>https://bg-remover.enjoy-onepage.com/privacy.html</link>
+      <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/privacy.html</guid>
+      <description>개인정보처리방침 &amp; 100% 로컬 연산 보증서 | 배경 제거기</description>
+      <pubDate>Mon, 14 Sep 2026 11:57:09 +0900</pubDate>
+    </item>
+    <item>
+      <title>이용약관 | 배경 제거기</title>
+      <link>https://bg-remover.enjoy-onepage.com/terms.html</link>
+      <guid isPermaLink="true">https://bg-remover.enjoy-onepage.com/terms.html</guid>
+      <description>이용약관 | 배경 제거기</description>
+      <pubDate>Mon, 14 Sep 2026 11:57:09 +0900</pubDate>
+    </item>
+  </channel>
 </rss>
