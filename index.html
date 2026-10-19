@@ -323,7 +323,7 @@
 
     function showToast(msg) {
       const t = document.getElementById('toast');
-      t.innerText = msg;
+      t.textContent = msg;
       t.classList.remove('opacity-0', 'pointer-events-none');
       setTimeout(() => t.classList.add('opacity-0', 'pointer-events-none'), 2200);
     }
@@ -372,12 +372,12 @@
     });
 
     toleranceRange.addEventListener('input', () => {
-      toleranceVal.innerText = toleranceRange.value + '%';
+      toleranceVal.textContent = toleranceRange.value + '%';
       processTransparency();
     });
 
     smoothRange.addEventListener('input', () => {
-      smoothVal.innerText = smoothRange.value + '단계';
+      smoothVal.textContent = smoothRange.value + '단계';
       processTransparency();
     });
 
